@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.2
-  heroku: circleci/heroku@1.2.6
+  heroku: circleci/heroku@1.2.3
 
 jobs:
   build:
@@ -72,4 +72,5 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              only:
+                - master
