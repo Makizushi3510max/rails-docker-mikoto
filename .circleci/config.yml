@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.2
-  heroku: circleci/heroku@1.2.6
+  heroku: circleci/heroku@1.2.3
 
 jobs:
   build:
@@ -46,9 +46,6 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - heroku/install
-      - run:
-          name: heroku login
-          command: heroku container:login
       - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
