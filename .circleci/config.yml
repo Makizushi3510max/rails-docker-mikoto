@@ -47,8 +47,8 @@ jobs:
           version: 19.03.13
       - heroku/install
       - run:
-          name: heroku login
-          command: heroku container:login
+          name: Setup Heroku
+          command: bash .circleci/setup-heroku.sh
       - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
