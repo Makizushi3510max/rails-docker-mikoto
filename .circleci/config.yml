@@ -11,9 +11,6 @@ jobs:
     steps:
       - checkout:
           path: ~/rails-docker-mikoto
-      - run:
-          name: bundleにプラットフォームをx86_64-linuxとするよう指定
-          command: bundle lock --add-platform x86_64-linux
       - ruby/install-deps
 
   test:
